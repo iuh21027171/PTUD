@@ -8,12 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.DBConnection;
+<<<<<<< HEAD
 import entity.ChiTietHoaDon;
 import entity.ChiTietHoaDonDoiTra;
 import entity.HoaDon;
 import entity.HoaDonDoiTra;
 import entity.KhachHang;
 import entity.NhanVien;
+=======
+import entity.ChiTietHoaDonDoiTra;
+>>>>>>> 18a2abe (Update DAO & Service)
 
 public class ChiTietHoaDonDoiTraDao {
 	private Connection con;
@@ -61,4 +65,8 @@ public class ChiTietHoaDonDoiTraDao {
 		return 1;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 18a2abe (Update DAO & Service)

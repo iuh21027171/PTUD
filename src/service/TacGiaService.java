@@ -7,7 +7,11 @@ import java.util.List;
 import entity.TacGia;
 
 public interface TacGiaService {
+<<<<<<< HEAD
 	public ArrayList<TacGia> getListTacGia() throws Exception;
+=======
+	public List<TacGia> getListTacGia() throws Exception;
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	public boolean themTacGia(TacGia t) throws Exception;
 

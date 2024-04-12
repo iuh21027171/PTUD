@@ -19,20 +19,47 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
 	@Override
 	public int insertAccount(TaiKhoan taiKhoan) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return taiKhoanDao.insertAccount(taiKhoan);
 	}
+=======
+        try {
+            return taiKhoanDao.insertAccount(taiKhoan);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public ArrayList<TaiKhoan> getList() {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return taiKhoanDao.getList();
 	}
+=======
+        try {
+            return taiKhoanDao.getList();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public int xoaTaiKhoan(String maNhanVien) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return taiKhoanDao.xoaTaiKhoan(maNhanVien);
 	}
+=======
+        try {
+            return taiKhoanDao.xoaTaiKhoan(maNhanVien);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public TaiKhoan getTaiKhoanTheoMaNV(String maNV) throws SQLException {
@@ -43,7 +70,16 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
 	@Override
 	public int doiMatKhau(String passMoi, String maNV) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return taiKhoanDao.doiMatKhau(passMoi, maNV);
 	}
+=======
+        try {
+            return taiKhoanDao.doiMatKhau(passMoi, maNV);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 }

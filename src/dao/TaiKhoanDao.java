@@ -5,15 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
 
 import db.DBConnection;
 import entity.NhanVien;
+=======
+
+import db.DBConnection;
+>>>>>>> 18a2abe (Update DAO & Service)
 import entity.TaiKhoan;
 
 public class TaiKhoanDao {
 
 	private Connection con;
+<<<<<<< HEAD
 	private PreparedStatement ps = null;
 	private ResultSet rs;
 	private String query;
@@ -40,10 +46,55 @@ public class TaiKhoanDao {
 			return listAcc;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
+=======
+	private PreparedStatement ps;
+	private ResultSet rs;
+
+	public TaiKhoanDao() {
+		con = DBConnection.getInstance().getConnection();
+	}
+
+	public ArrayList<TaiKhoan> getList() throws SQLException {
+		ps = con.prepareStatement("SELECT * FROM TaiKhoan");
+		rs = ps.executeQuery();
+		NhanVienDao nhanVienDao = new NhanVienDao();
+		ArrayList<TaiKhoan> listAcc = new ArrayList<>();
+		while (rs.next()) {
+			listAcc.add(new TaiKhoan(rs.getString(1), rs.getString(2),
+					nhanVienDao.timNhanVienTheoMa(rs.getString(3)), rs.getBoolean(4)));
+		}
+		return listAcc;
+	}
+
+	public int insertAccount(TaiKhoan taiKhoan) throws SQLException {
+		ps = con.prepareStatement("INSERT INTO TaiKhoan VALUES(?,?,?,?)");
+		ps.setString(1, taiKhoan.getTenDangNhap());
+		ps.setString(2, taiKhoan.getMatKhau());
+		ps.setString(3, taiKhoan.getNhanVien().getMaNhanVien());
+		ps.setBoolean(4, taiKhoan.isQuyen());
+		return ps.executeUpdate();
+	}
+
+	public int xoaTaiKhoan(String maNhanVien) throws SQLException {
+		ps = con.prepareStatement("delete from TaiKhoan where maNhanVien = ?");
+		ps.setString(1, maNhanVien);
+		return ps.executeUpdate();
+	}
+
+	public TaiKhoan getTaiKhoanTheoMaNV(String maNV) throws SQLException {
+		NhanVienDao nhanVienDao = new NhanVienDao();
+		ps = con.prepareStatement("SELECT *FROM TaiKhoan where maNhanVien =?");
+		ps.setString(1, maNV);
+		rs = ps.executeQuery();
+		if (rs.next()) {
+			return new TaiKhoan(rs.getString(1), rs.getString(2), nhanVienDao.timNhanVienTheoMa(rs.getString(3)),
+					rs.getBoolean(4));
+>>>>>>> 18a2abe (Update DAO & Service)
 		}
 		return null;
 	}
 
+<<<<<<< HEAD
 	public int insertAccount(TaiKhoan taiKhoan) {
 		try {
 			String query = "INSERT INTO TaiKhoan VALUES(?,?,?,?)";
@@ -104,4 +155,12 @@ public class TaiKhoanDao {
 		return -1;
 	}
 
+=======
+	public int doiMatKhau(String passMoi, String maNV) throws SQLException {
+		ps = con.prepareStatement("update TaiKhoan set matKhau =? where maNhanVien=?");
+		ps.setString(1, passMoi);
+		ps.setString(2, maNV);
+		return ps.executeUpdate();
+	}
+>>>>>>> 18a2abe (Update DAO & Service)
 }

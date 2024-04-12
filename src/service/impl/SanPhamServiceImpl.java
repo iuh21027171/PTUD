@@ -80,8 +80,17 @@ public class SanPhamServiceImpl implements SanPhamService {
 	@Override
 	public List<SanPham> getSanPhamBanNhieuNhatTheoNgayTuChon(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return thongKeDao.getSanPhamBanNhieuNhatTheoNgayTuChon(ngayBatDau, ngayKetThuc);
 	}
+=======
+        try {
+            return thongKeDao.getSanPhamBanNhieuNhatTheoNgayTuChon(ngayBatDau, ngayKetThuc);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public SanPham timSanPhamTheoMa(String maSP) throws SQLException {
@@ -140,8 +149,17 @@ public class SanPhamServiceImpl implements SanPhamService {
 	@Override
 	public int capNhatSoLuongSanPham(SanPham sanPham) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return sanPhamDao.capNhatSoLuongSanPham(sanPham);
 	}
+=======
+        try {
+            return sanPhamDao.capNhatSoLuongSanPham(sanPham);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public List<VanPhongPham> getAllVPP() {

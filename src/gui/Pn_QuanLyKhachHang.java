@@ -481,6 +481,7 @@ public class Pn_QuanLyKhachHang extends JPanel implements MouseListener, ActionL
 				String tenTim = txtTenKhachHang.getText();
 				if (!sdt.isEmpty() && tenTim.isEmpty()) {
 					if (!sdt.isEmpty() && tenTim.isEmpty()) {
+<<<<<<< HEAD
 						try {
 							kh = iKhachHang.timKhachHangTheoSDT(sdt);
 						} catch (SQLException e1) {
@@ -488,6 +489,10 @@ public class Pn_QuanLyKhachHang extends JPanel implements MouseListener, ActionL
 							e1.printStackTrace();
 						}
 						if (kh != null) {
+=======
+                        kh = iKhachHang.timKhachHangTheoSDT(sdt);
+                        if (kh != null) {
+>>>>>>> 18a2abe (Update DAO & Service)
 							xoaHetDuLieu();
 							for (KhachHang khh : kh) {
 								try {
@@ -524,6 +529,7 @@ public class Pn_QuanLyKhachHang extends JPanel implements MouseListener, ActionL
 				} else if (sdt.isEmpty() && !tenTim.isEmpty()) {
 					if (!tenTim.isEmpty() && sdt.isEmpty()) {
 
+<<<<<<< HEAD
 						try {
 							kh = iKhachHang.timKhachHangTheoTen(tenTim);
 
@@ -532,6 +538,11 @@ public class Pn_QuanLyKhachHang extends JPanel implements MouseListener, ActionL
 							e1.printStackTrace();
 						}
 						if (kh.size() > 0) {
+=======
+                        kh = iKhachHang.timKhachHangTheoTen(tenTim);
+
+                        if (kh.size() > 0) {
+>>>>>>> 18a2abe (Update DAO & Service)
 							xoaHetDuLieu();
 							for (KhachHang khh : kh) {
 								try {

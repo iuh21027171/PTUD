@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+>>>>>>> 18a2abe (Update DAO & Service)
 import java.util.List;
 
 import dao.NhanVienDao;
@@ -99,6 +103,7 @@ public class NhanVienServiceImpl implements NhanVienService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<NhanVien> getNhanVienBanNhieuNhatTheoNgayTuChon(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
 		// TODO Auto-generated method stub
 		return thongKeDao.getNhanVienBanNhieuNhatTheoNgayTuChon(ngayBatDau, ngayKetThuc);
@@ -108,6 +113,25 @@ public class NhanVienServiceImpl implements NhanVienService {
 	public List<NhanVien> getDoanhThuCuaNhanVien(LocalDate ngayBatDau, LocalDate ngayKetThuc) throws SQLException {
 		// TODO Auto-generated method stub
 		return thongKeDao.getDoanhThuCuaNhanVien(ngayBatDau, ngayKetThuc);
+=======
+	public ArrayList<NhanVien> getNhanVienBanNhieuNhatTheoNgayTuChon(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
+		try {
+			return new ArrayList<>(thongKeDao.getNhanVienBanNhieuNhatTheoNgayTuChon(ngayBatDau, ngayKetThuc));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
+	@Override
+	public ArrayList<NhanVien> getDoanhThuCuaNhanVien(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
+		try {
+			return new ArrayList<>(thongKeDao.getDoanhThuCuaNhanVien());
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override
@@ -130,8 +154,17 @@ public class NhanVienServiceImpl implements NhanVienService {
 
 	@Override
 	public List<NhanVien> getListNhanVienByNameAndSDT(String tenNV, String sdt) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return nhanVienDao.getListNhanVienByNameAndSDT(tenNV, sdt);
+=======
+		try {
+			return nhanVienDao.getListNhanVienByNameAndSDT(tenNV, sdt);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override
@@ -142,12 +175,22 @@ public class NhanVienServiceImpl implements NhanVienService {
 
 	@Override
 	public NhanVien getNhanVienByEmail(String email) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return nhanVienDao.getNhanVienByEmail(email);
+=======
+		try {
+			return nhanVienDao.getNhanVienByEmail(email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override
 	public int updateOTP(String gmail, String OTP, Timestamp hetHanOTP) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return nhanVienDao.updateOTP(gmail, OTP, hetHanOTP);
 	}
@@ -156,5 +199,23 @@ public class NhanVienServiceImpl implements NhanVienService {
 	public List<NhanVien> thongKeDoanhThu10NVBanNhieuNhat(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
 		// TODO Auto-generated method stub
 		return thongKeDao.thongKeDoanhThu10NVBanNhieuNhat(ngayBatDau, ngayKetThuc);
+=======
+		try {
+			return nhanVienDao.updateOTP(gmail, OTP, hetHanOTP);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+
+	@Override
+	public ArrayList<NhanVien> thongKeDoanhThu10NVBanNhieuNhat(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
+		try {
+			return new ArrayList<>(thongKeDao.thongKeDoanhThu10NVBanNhieuNhat(ngayBatDau, ngayKetThuc));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 }

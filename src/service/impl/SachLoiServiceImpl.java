@@ -19,8 +19,17 @@ public class SachLoiServiceImpl implements SachLoiService {
 	@Override
 	public int capNhatSoLuong(SachLoi sl) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return sachLoiDao.capNhatSoLuong(sl);
 	}
+=======
+        try {
+            return sachLoiDao.capNhatSoLuong(sl);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 	@Override
 	public List<SachLoi> getAllSachLoi() throws SQLException {
@@ -30,8 +39,18 @@ public class SachLoiServiceImpl implements SachLoiService {
 
 	@Override
 	public void xoaSachLoi(String maSach, String loi) {
+<<<<<<< HEAD
 		sachLoiDao.xoaSachLoi(maSach, loi);
 		
 	}
+=======
+        try {
+            sachLoiDao.xoaSachLoi(maSach, loi);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+>>>>>>> 18a2abe (Update DAO & Service)
 
 }

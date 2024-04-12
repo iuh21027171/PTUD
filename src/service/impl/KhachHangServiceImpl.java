@@ -80,8 +80,17 @@ public class KhachHangServiceImpl implements KhachHangService {
 
 	@Override
 	public List<KhachHang> getTop10KHThanThiet(LocalDate ngayBatDau, LocalDate ngayKetThuc) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return thongKeDao.getTop10KHThanThiet(ngayBatDau, ngayKetThuc);
+=======
+		try {
+			return thongKeDao.getTop10KHThanThiet(ngayBatDau, ngayKetThuc);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override
@@ -99,6 +108,7 @@ public class KhachHangServiceImpl implements KhachHangService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public ArrayList<KhachHang> timKhachHangTheoSDT(String sDT) throws SQLException {
 		// TODO Auto-generated method stub
 
@@ -109,12 +119,40 @@ public class KhachHangServiceImpl implements KhachHangService {
 	public ArrayList<KhachHang> timKhachHangTheoTen(String tenKH) throws SQLException {
 		// TODO Auto-generated method stub
 		return khachhang_dao.timKhachHangTheoTen(tenKH);
+=======
+	public ArrayList<KhachHang> timKhachHangTheoSDT(String sDT) {
+		try {
+			return new ArrayList<>(khachhang_dao.timKhachHangTheoSDT(sDT));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
+	@Override
+	public ArrayList<KhachHang> timKhachHangTheoTen(String tenKH) {
+		try {
+			return new ArrayList<>(khachhang_dao.timKhachHangTheoTen(tenKH));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override
 	public ArrayList<KhachHang> getListKhachHangByNameAndSDT(String tenNhanVien, String sDT) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return khachhang_dao.getListKhachHangByNameAndSDT(tenNhanVien, sDT);
+=======
+		try {
+			return new ArrayList<>(khachhang_dao.getListKhachHangByNameAndSDT(tenNhanVien, sDT));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+>>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package dao;
 
+<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,10 +19,25 @@ public class ChiTietHoaDonDao {
 	private ResultSet rs;
 	private String query;
 	private int rsCheck;
+=======
+import db.DBConnection;
+import entity.ChiTietHoaDon;
+import entity.HoaDon;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ChiTietHoaDonDao {
+	private Connection con;
+	private PreparedStatement ps;
+	private ResultSet rs;
+>>>>>>> 18a2abe (Update DAO & Service)
 	private HoaDonDao hoaDonDao = new HoaDonDao();
 	private SanPhamDao sanPhamDao = new SanPhamDao();
 
 	public ChiTietHoaDonDao() {
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
 		DBConnection connection = DBConnection.getInstance();
 		con = connection.getConnection();
@@ -42,10 +58,21 @@ public class ChiTietHoaDonDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+=======
+		con = DBConnection.getInstance().getConnection();
+	}
+
+	private List<ChiTietHoaDon> getCTHoaDon(ResultSet rs) throws SQLException {
+		List<ChiTietHoaDon> dscthd = new ArrayList<>();
+		while (rs.next()) {
+			dscthd.add(new ChiTietHoaDon(hoaDonDao.timHoaDonTheoMa(rs.getString(1)),
+					sanPhamDao.timSanPhamTheoMa(rs.getString(2)), rs.getInt(3), rs.getLong(4)));
+>>>>>>> 18a2abe (Update DAO & Service)
 		}
 		return dscthd;
 	}
 
+<<<<<<< HEAD
 	public ArrayList<ChiTietHoaDon> getCTHDTheoHoaDon(HoaDon hoaDon) {
 		ArrayList<ChiTietHoaDon> listChiTietHoaDon = new ArrayList<>();
 		try {
@@ -126,3 +153,45 @@ public class ChiTietHoaDonDao {
 			
 		}
 }
+=======
+	public List<ChiTietHoaDon> getCTHoaDonTheoMaHoaDon(String maHD) throws SQLException {
+		ps = con.prepareStatement("Select * from ChiTietHoaDon where maHoaDon =?");
+		ps.setString(1, maHD);
+		rs = ps.executeQuery();
+		return getCTHoaDon(rs);
+	}
+
+	public List<ChiTietHoaDon> getCTHDTheoHoaDon(HoaDon hoaDon) throws SQLException {
+		ps = con.prepareStatement("Select * from ChiTietHoaDon where maHoaDon = ?");
+		ps.setString(1, hoaDon.getMaHoaDon());
+		rs = ps.executeQuery();
+		return getCTHoaDon(rs);
+	}
+
+	public List<ChiTietHoaDon> getAllCTHD() throws SQLException {
+		ps = con.prepareStatement("Select * from ChiTietHoaDon");
+		rs = ps.executeQuery();
+		return getCTHoaDon(rs);
+	}
+
+	public int addChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) throws SQLException {
+		ps = con.prepareStatement("insert into ChiTietHoaDon values (?, ?, ?, ?)");
+		ps.setString(1, chiTietHoaDon.getHoaDon().getMaHoaDon());
+		ps.setString(2, chiTietHoaDon.getSanPham().getMaSanPham());
+		ps.setInt(3, chiTietHoaDon.getSoLuong());
+		ps.setLong(4, chiTietHoaDon.getDonGia());
+		return ps.executeUpdate();
+	}
+
+	public long getTien(String maHD) throws SQLException {
+		long tong = 0;
+		ps = con.prepareStatement("Select * from ChiTietHoaDon where maHoaDon =?");
+		ps.setString(1, maHD);
+		rs = ps.executeQuery();
+		while (rs.next()) {
+			tong += rs.getInt(3) * rs.getLong(4);
+		}
+		return tong + tong / 100;
+	}
+}
+>>>>>>> 18a2abe (Update DAO & Service)
