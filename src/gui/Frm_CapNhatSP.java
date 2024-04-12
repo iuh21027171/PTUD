@@ -8,10 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
 import java.util.List;
->>>>>>> 18a2abe (Update DAO & Service)
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -88,15 +85,6 @@ public class Frm_CapNhatSP extends JFrame implements ActionListener {
 	ChatLieuServiceImpl chatLieuServiceImpl = new ChatLieuServiceImpl();
 	XuatXuServiceImpl xuatXuServiceImpl = new XuatXuServiceImpl();
 	MauSacServiceImpl mauSacServiceImpl = new MauSacServiceImpl();
-<<<<<<< HEAD
-	private ArrayList<TheLoaiSach> theLoaiSachs;
-	private ArrayList<TacGia> tacGias;
-	private ArrayList<NhaXuatBan> nhaXuatBans;
-	private ArrayList<NhaCungCap> nhaCungCaps;
-	private ArrayList<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
-	private ArrayList<ChatLieu> chatLieus;
-	private ArrayList<XuatXu> xuatXus;
-=======
 	private List<TheLoaiSach> theLoaiSachs;
 	private List<TacGia> tacGias;
 	private ArrayList<NhaXuatBan> nhaXuatBans;
@@ -104,7 +92,6 @@ public class Frm_CapNhatSP extends JFrame implements ActionListener {
 	private List<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
 	private ArrayList<ChatLieu> chatLieus;
 	private List<XuatXu> xuatXus;
->>>>>>> 18a2abe (Update DAO & Service)
 	private ArrayList<MauSac> mauSacs;
 	private JTextArea txtAreaGhiChu;
 	private JComboBox<String> cbbDonVi;

@@ -134,15 +134,6 @@ public class Pn_QuanLySanPham extends JPanel implements ActionListener, MouseLis
 	ChatLieuServiceImpl chatLieuServiceImpl = new ChatLieuServiceImpl();
 	XuatXuServiceImpl xuatXuServiceImpl = new XuatXuServiceImpl();
 	MauSacServiceImpl mauSacServiceImpl = new MauSacServiceImpl();
-<<<<<<< HEAD
-	private ArrayList<TheLoaiSach> theLoaiSachs;
-	private ArrayList<TacGia> tacGias;
-	private ArrayList<NhaXuatBan> nhaXuatBans;
-	private ArrayList<NhaCungCap> nhaCungCaps;
-	private ArrayList<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
-	private ArrayList<ChatLieu> chatLieus;
-	private ArrayList<XuatXu> xuatXus;
-=======
 	private List<TheLoaiSach> theLoaiSachs;
 	private List<TacGia> tacGias;
 	private ArrayList<NhaXuatBan> nhaXuatBans;
@@ -150,7 +141,6 @@ public class Pn_QuanLySanPham extends JPanel implements ActionListener, MouseLis
 	private List<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
 	private ArrayList<ChatLieu> chatLieus;
 	private List<XuatXu> xuatXus;
->>>>>>> 18a2abe (Update DAO & Service)
 	private JButton btnQuanLyDanhMuc;
 	private HSSFWorkbook hssfWorkbook;
 	private JFileChooser filechoose;

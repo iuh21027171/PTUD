@@ -662,11 +662,6 @@ public class Pn_QuanLyHoaDon extends JPanel implements ActionListener, MouseList
 
 	public long tongTienHoaDon(String maHoaDon) {
 		chiTietHoaDonDao = new ChiTietHoaDonDao();
-<<<<<<< HEAD
-		long tongTien = chiTietHoaDonDao.getTien(maHoaDon);
-		return tongTien;
-
-=======
 		long tongTien = 0;
 		try {
 			tongTien = chiTietHoaDonDao.getTien(maHoaDon);
@@ -674,7 +669,6 @@ public class Pn_QuanLyHoaDon extends JPanel implements ActionListener, MouseList
 			e.printStackTrace();
 		}
 		return tongTien;
->>>>>>> 18a2abe (Update DAO & Service)
 	}
 
 	public void DocDuLieuTuArrayListVaoModel() throws Exception {

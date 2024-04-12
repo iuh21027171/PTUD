@@ -8,15 +8,9 @@ import entity.TheLoaiSach;
 import entity.TheLoaiVanPhongPham;
 
 public interface TheLoaiService {
-<<<<<<< HEAD
-	public ArrayList<TheLoaiSach> getListTheLoaiSach() throws Exception;
-
-	public ArrayList<TheLoaiVanPhongPham> getListTheLoaiVanPhongPham() throws Exception;
-=======
 	public List<TheLoaiSach> getListTheLoaiSach() throws Exception;
 
 	public List<TheLoaiVanPhongPham> getListTheLoaiVanPhongPham() throws Exception;
->>>>>>> 18a2abe (Update DAO & Service)
 
 	public boolean themTheLoaiSach(TheLoaiSach t) throws Exception;
 

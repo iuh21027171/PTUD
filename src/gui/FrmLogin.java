@@ -25,10 +25,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-<<<<<<< HEAD
-=======
 import java.sql.SQLException;
->>>>>>> 18a2abe (Update DAO & Service)
 import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -295,11 +292,6 @@ public class FrmLogin extends JFrame implements ActionListener, MouseListener {
 		String strPassword = new String(chPassWord);
 		boolean status = false;
 		TaiKhoanDao accControl = new TaiKhoanDao();
-<<<<<<< HEAD
-		List<TaiKhoan> list = accControl.getList();
-
-		if (obj.equals(btnDangNhap)) {
-=======
         List<TaiKhoan> list = null;
         try {
             list = accControl.getList();
@@ -308,7 +300,6 @@ public class FrmLogin extends JFrame implements ActionListener, MouseListener {
         }
 
         if (obj.equals(btnDangNhap)) {
->>>>>>> 18a2abe (Update DAO & Service)
 			// System.out.println("ok");
 			for (TaiKhoan account : list) {
 				if (strUserName.equalsIgnoreCase(account.getTenDangNhap())) {

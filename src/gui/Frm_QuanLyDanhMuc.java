@@ -35,10 +35,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
 import java.util.List;
->>>>>>> 18a2abe (Update DAO & Service)
 
 import javax.swing.JRadioButton;
 import javax.swing.BorderFactory;
@@ -72,21 +69,12 @@ public class Frm_QuanLyDanhMuc extends JFrame implements ActionListener, MouseLi
 	ChatLieuServiceImpl chatLieuServiceImpl = new ChatLieuServiceImpl();
 	XuatXuServiceImpl xuatXuServiceImpl = new XuatXuServiceImpl();
 	MauSacServiceImpl mauSacServiceImpl = new MauSacServiceImpl();
-<<<<<<< HEAD
-	private ArrayList<TheLoaiSach> theLoaiSachs;
-	private ArrayList<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
-	private ArrayList<NhaCungCap> nhaCungCaps;
-	private ArrayList<NhaXuatBan> nhaXuatBans;
-	private ArrayList<XuatXu> xuatXus;
-	private ArrayList<TacGia> tacGias;
-=======
 	private List<TheLoaiSach> theLoaiSachs;
 	private List<TheLoaiVanPhongPham> theLoaiVanPhongPhams;
 	private ArrayList<NhaCungCap> nhaCungCaps;
 	private ArrayList<NhaXuatBan> nhaXuatBans;
 	private List<XuatXu> xuatXus;
 	private List<TacGia> tacGias;
->>>>>>> 18a2abe (Update DAO & Service)
 	private ArrayList<ChatLieu> chatLieus;
 	private ArrayList<MauSac> mauSacs;
 	private JLabel lblTitle;
